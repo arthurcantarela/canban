@@ -49,12 +49,12 @@ const hardcodedData = {
       cards: [
         {
           id: 3,
-          title: "Task One",
+          title: "Task Three",
           text: "Lorem ipsum dolor sit amet"
         },
         {
           id: 4,
-          title: "Task Two",
+          title: "Task Four",
           text: "Lorem ipsum dolor sit amet"
         }
       ]
