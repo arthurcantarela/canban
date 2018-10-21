@@ -1,52 +1,26 @@
 import React, { Component } from 'react';
 import Board from "components/Board";
+import { hardcodedData } from "core/data";
 import './App.scss';
 
-const App = ({ columns }) => (
-  <main>
-    <Board columns={columns} />
-  </main>
-);
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      ...hardcodedData
+    };
 
-const hardcodedData = {
-  columns: [
-    {
-      id: 1,
-      title: "To Do",
-      cards: [
-        {
-          id: 1,
-          title: "Task One",
-          description: "Lorem ipsum dolor sit amet"
-        },
-        {
-          id: 2,
-          title: "Task Two",
-          description: "Lorem ipsum dolor sit amet"
-        }
-      ]
-    },
-    {
-      id: 2,
-      title: "Done",
-      cards: [
-        {
-          id: 3,
-          title: "Task Three",
-          description: "Lorem ipsum dolor sit amet"
-        },
-        {
-          id: 4,
-          title: "Task Four",
-          description: "Lorem ipsum dolor sit amet"
-        }
-      ]
-    }
-  ]
+  }
+
+  addColumn = () => this.setState
+
+  render = () => {
+    return (
+      <main>
+        <Board {...this.state} />
+      </main >
+    );
+  }
 }
-
-App.defaultProps = {
-  ...hardcodedData
-};
 
 export default App;
